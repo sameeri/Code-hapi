@@ -1,0 +1,29 @@
+{
+  "name": "make-me-hapi",
+  "version": "1.0.0",
+  "description": "\"Getting started with Hapi.js\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sameeri/Code-hapi.git"
+  },
+  "keywords": [
+    "Hapi.js",
+    "REST",
+    "API",
+    "WebApi",
+    "RESTApi"
+  ],
+  "author": "Sameeri Marryboyina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sameeri/Code-hapi/issues"
+  },
+  "homepage": "https://github.com/sameeri/Code-hapi#readme",
+  "dependencies": {
+    "hapi": "^8.6.1"
+  }
+}
