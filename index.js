@@ -1,15 +1,38 @@
-var Hapi = require('hapi');
+var hapi = require('hapi');
 
-var server = new Hapi.Server();
+var server = new hapi.Server();
 
-var serverConfig = {
-    port: 8001
-};
+var connectionOptions = {port : 9001};
 
-server.connection(serverConfig);
+server.connection(connectionOptions);
 
-function startServer(){
-    console.log('Hapi.js server running at : ', server.info.uri);
+function onStart(){
+  console.log("Server has started! ", connectionOptions);
 }
 
-server.start(startServer);
+var homeRoute = {
+    path : '/',
+    handler : function homeHandler (request, reply){
+        console.log('A request to base route has been made');
+        reply("Cause i'm happy!");
+    },
+    method: 'GET'
+
+};
+
+var debugRoute = {
+    path : '/debug',
+    handler : function debugHandler (request, reply){
+        console.log('A request to debug route was made at : ',  new Date());
+        reply(connectionOptions);
+    },
+    method: 'GET'
+
+};
+
+var routes = [homeRoute, debugRoute];
+
+server.route(routes);
+
+
+server.start(onStart);

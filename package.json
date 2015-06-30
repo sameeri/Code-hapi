@@ -1,8 +1,13 @@
 {
-  "name": "make-me-hapi",
+  "name": "hapi-rest",
   "version": "1.0.0",
-  "description": "\"Getting started with Hapi.js\"",
+  "description": "Rest endpoints using hapi",
   "main": "index.js",
+  "dependencies": {
+    "hapi": "^8.6.1",
+    "lodash": "^3.9.3"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,19 +16,15 @@
     "url": "git+https://github.com/sameeri/Code-hapi.git"
   },
   "keywords": [
-    "Hapi.js",
     "REST",
     "API",
-    "WebApi",
-    "RESTApi"
+    "Hapi",
+    "WebAPI"
   ],
   "author": "Sameeri Marryboyina",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/sameeri/Code-hapi/issues"
   },
-  "homepage": "https://github.com/sameeri/Code-hapi#readme",
-  "dependencies": {
-    "hapi": "^8.6.1"
-  }
+  "homepage": "https://github.com/sameeri/Code-hapi#readme"
 }
