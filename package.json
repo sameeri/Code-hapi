@@ -1,7 +1,7 @@
 {
-  "name": "hapi-rest",
+  "name": "hapi-code-organization",
   "version": "1.0.0",
-  "description": "Rest endpoints using hapi",
+  "description": "organizing hapi code",
   "main": "index.js",
   "dependencies": {
     "hapi": "^8.6.1",
