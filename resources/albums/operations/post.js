@@ -3,7 +3,7 @@ function handler (request, reply){
 }
 
 var post = {
-    path : '/albums/{id}',
+    path : '/albums',
     handler : handler,
     method: 'POST'
 

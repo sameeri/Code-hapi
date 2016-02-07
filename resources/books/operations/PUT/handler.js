@@ -1,7 +1,5 @@
 function handler (request, reply){
-        reply("Update an existing book");
+        reply("UPDATE an existing Book");
 }
-
-
 
 module.exports = handler;

@@ -1,41 +1,41 @@
 function getHandler (request, reply){
-        reply("Retrieve a character by name");
+        reply("Retrieve a actor by name");
 }
 
 function listHandler (request, reply){
-        reply("List all characters");
+        reply("List all actors");
 }
 
 function postHandler (request, reply){
-        reply("Create a new character");
+        reply("Create a new actor");
 }
 
 
 function putHandler (request, reply){
-        reply("Update an existing character information");
+        reply("Update an existing actor information");
 }
 
 function deleteHandler (request, reply){
-        reply("Delete character by name");
+        reply("Delete actor by name");
 }
 
 
 var get = {
-    path : '/characters/{name}',
+    path : '/actors/{name}',
     handler : getHandler,
     method: 'GET'
 
 };
 
 var list = {
-    path : '/characters',
+    path : '/actors',
     handler : listHandler,
     method: 'GET'
 
 };
 
 var post = {
-    path : '/characters/{name}',
+    path : '/actors',
     handler : postHandler,
     method: 'POST'
 
@@ -43,14 +43,14 @@ var post = {
 
 
 var put = {
-    path : '/characters/{name}',
+    path : '/actors/{name}',
     handler : putHandler,
     method: 'PUT'
 
 };
 
 var remove = {
-    path : '/characters/{name}',
+    path : '/actors/{name}',
     handler : deleteHandler,
     method: 'DELETE'
 

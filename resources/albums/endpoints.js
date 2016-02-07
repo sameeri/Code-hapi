@@ -1,3 +1,5 @@
+'use strict';
+
 var get = require('./operations/get');
 var list = require('./operations/list');
 var put = require('./operations/put');
