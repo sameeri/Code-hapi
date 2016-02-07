@@ -9,7 +9,6 @@ var resourcesPath = path.resolve(__dirname, '../resources');
 var resourceDirectories = utilities.getDirectories(resourcesPath);
 
 _.each(resourceDirectories, function (resourceDirectory){
-  if(resourceDirectory === 'friends'){
     var resourceDirectoryPath = path.resolve(resourcesPath, resourceDirectory);
     var operationDirectories = utilities.getDirectories(resourceDirectoryPath);
     _.each(operationDirectories, function(operationDirectory){
@@ -18,7 +17,6 @@ _.each(resourceDirectories, function (resourceDirectory){
        var route = require(routePath);
        routes.push(route);
     });
-  }
 });
 
 
