@@ -1,12 +1,8 @@
 var hapi = require('hapi');
 
-
 var connectionOptions = {port : 9001};
 var server = new hapi.Server();
 server.connection(connectionOptions);
-
-
-//var routes = require('./routes.js');
 
 var albumRoutes = require('./resources/albums/endpoints.js');
 var bookRoutes = require('./resources/books/routes.js');
