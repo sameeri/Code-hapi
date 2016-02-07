@@ -1,5 +1,5 @@
 function handler (request, reply){
-        reply("DELETE a Book by id");
+  reply("GET a friend by id");
 }
 
 module.exports = handler;

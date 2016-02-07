@@ -1,7 +1,5 @@
 function handler (request, reply){
-        reply("List all books");
+  reply("GET all Books");
 }
-
-
 
 module.exports = handler;
