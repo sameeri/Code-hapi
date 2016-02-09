@@ -1,24 +1,45 @@
 'use strict';
-
 var hapi = require('hapi');
+
+const Inert = require('inert');
+const Vision = require('vision');
+const HapiSwagger = require('hapi-swagger');
+
 var connectionOptions = {port : 9001};
 
 var server = new hapi.Server();
 server.connection(connectionOptions);
 
-// Code organization Level 4.
-// Resources are represented with folders
-// Inside each resource, Operations are represented with folders
-// Each operation folder has two files route.js, handler.js
-// A routesCollector, on startup programmatically walks through the tree of Resources
-// and exports an array of routes.
-
 var routes = require('./routing/routes');
 console.log('Routes', routes);
 server.route(routes);
 
-function onStart(){
-  console.log("Server has started! ", connectionOptions);
+var options = {
+    info: {
+            'title': 'API Docs',
+            'version': '1.0',
+        }
+    };
+
+
+function onStart(err){
+  if(err){
+      console.log(err);
+  }
+  console.log("Server has started! ", server.info.uri, connectionOptions);
 }
 
-server.start(onStart);
+function uponRegistration(err){
+  if (err) {
+       console.log(err);
+   }
+      server.start(onStart);
+}
+
+server.register([
+    Inert,
+    Vision,
+    {
+        'register': HapiSwagger,
+        'options': options
+    }], uponRegistration);

@@ -9,7 +9,10 @@
   "author": "Sameeri Marryboyina <sameeri.pavan@gmail.com> (http://www.whack-whack.info/)",
   "license": "MIT",
   "dependencies": {
-    "hapi": "8.0.0",
-    "lodash": "4.2.1"
+    "hapi": "13.0.0",
+    "hapi-swagger": "4.1.0",
+    "inert": "3.2.0",
+    "lodash": "4.2.1",
+    "vision": "4.0.1"
   }
 }
