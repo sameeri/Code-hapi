@@ -5,7 +5,7 @@ var route = {
 'path': '/users/{id}',
 'handler': require('./handler'),
 'config': {
-  'description': 'Get todo',
+  'description': 'Delete user',
   'notes': 'Delete a user by id',
   'tags': ['api']
 }
