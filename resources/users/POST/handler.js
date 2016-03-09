@@ -4,8 +4,8 @@ console.log(model);
 
 function handler (request, reply){
   function onSuccessfulWrite(data){
-      console.log('Data', data);
-      reply("Created a new user");
+      console.log('Created a new user', data);
+      reply(data);
   }
   function onError(err){
     console.log('err', err);
