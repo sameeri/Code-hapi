@@ -2,7 +2,7 @@
 var model = require('../../../models/User');
 
 function handler (request, reply){
-  function onSuccessfulRead(data){
+  function onSuccess(data){
       console.log('Fetched all users', data);
       reply(data);
   }
@@ -11,7 +11,7 @@ function handler (request, reply){
     reply("Failed fetching users");
   }
 
-  model.find().then(onSuccessfulRead, onError);
+  model.find().then(onSuccess, onError);
 }
 
 module.exports = handler;

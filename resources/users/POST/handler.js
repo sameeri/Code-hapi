@@ -2,7 +2,7 @@
 var model = require('../../../models/User');
 
 function handler (request, reply){
-  function onSuccessfulWrite(data){
+  function onSuccess(data){
       console.log('Created a new user', data);
       reply(data);
   }
@@ -15,7 +15,7 @@ function handler (request, reply){
   var user = request.payload;
 
   console.log(typeof user);
-  model.create(user).then(onSuccessfulWrite, onError);
+  model.create(user).then(onSuccess, onError);
 }
 
 module.exports = handler;

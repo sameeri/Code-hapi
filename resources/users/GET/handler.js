@@ -3,7 +3,7 @@ var model = require('../../../models/User');
 console.log(model);
 
 function handler (request, reply){
-  function onSuccessfulRead(data){
+  function onSuccess(data){
       console.log('Successfully fetched a user by id', data);
       reply(data);
   }
@@ -16,7 +16,7 @@ function handler (request, reply){
   var userId = request.params.id;
   var query = {'_id': userId};
 
-  model.findOne(query).then(onSuccessfulRead, onError);
+  model.findOne(query).then(onSuccess, onError);
 }
 
 module.exports = handler;
