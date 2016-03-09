@@ -1,6 +1,5 @@
 'use strict';
 var model = require('../../../models/User');
-console.log(model);
 
 function handler (request, reply){
   function onSuccessfulWrite(data){
