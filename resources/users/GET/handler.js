@@ -1,10 +1,12 @@
 'use strict';
 var model = require('../../../models/User');
-console.log(model);
 
 function handler (request, reply){
   function onSuccess(data){
       console.log('Successfully fetched a user by id', data);
+      if(data === null){
+        reply('No data');
+      }
       reply(data);
   }
   function onError(err){
