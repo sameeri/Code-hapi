@@ -1,5 +1,7 @@
 'use strict';
 var hapi = require('hapi');
+var mongoose = require('mongoose');
+mongoose.Promise = Promise;
 
 var server = new hapi.Server();
 
@@ -7,7 +9,6 @@ var connectionOptions = {port : 9001};
 server.connection(connectionOptions);
 
 var routes = require('./routing/routes');
-console.log('Routes', routes);
 server.route(routes);
 
 function onServerStart(err){
@@ -18,10 +19,19 @@ function onServerStart(err){
 }
 
 function uponPluginRegistration(err){
+  function onSuccessfulMongoConnectionOpen(){
+       server.start(onServerStart);
+  }
+
   if (err) {
        console.log(err);
    }
-      server.start(onServerStart);
+
+   //Connect to mongo server
+   mongoose.connect('mongodb://localhost/playfield');
+   var db = mongoose.connection;
+   db.on('error', console.error.bind(console, 'connection error:'));
+   db.once('open', onSuccessfulMongoConnectionOpen);
 }
 
 var plugins = require('./plugins/plugins');
