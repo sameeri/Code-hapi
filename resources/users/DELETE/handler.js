@@ -3,12 +3,7 @@ var model = require('../../../models/User');
 
 function handler (request, reply){
   function onSuccess(data){
-    console.log('what is passed in', data);
-
-      if(data === null){
-        reply('No data');
-      }
-      reply(data);
+    reply().code(204);
   }
   function onError(err){
     console.log('err', err);

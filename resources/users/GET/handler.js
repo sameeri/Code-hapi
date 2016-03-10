@@ -1,10 +1,11 @@
 'use strict';
 var model = require('../../../models/User');
+var Boom = require('boom');
 
 function handler (request, reply){
   function onSuccess(data){
       if(data === null){
-        reply('No data');
+        reply(Boom.notFound('No user match found'));
       }
       reply(data);
   }
@@ -12,8 +13,6 @@ function handler (request, reply){
     console.log('err', err);
     reply("Failed reading user");
   }
-
-  console.log('Requested id', request.params.id);
   var userId = request.params.id;
   var query = {'_id': userId};
 

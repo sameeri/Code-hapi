@@ -15,7 +15,7 @@ function handler(request, reply) {
   }
 
   function onSuccessfulWrite(data){
-    reply(data);
+    reply().code(204);
   }
 
   function onError(err) {

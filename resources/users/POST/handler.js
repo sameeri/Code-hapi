@@ -4,7 +4,7 @@ var model = require('../../../models/User');
 function handler (request, reply){
   function onSuccess(data){
       console.log('Created a new user', data);
-      reply(data);
+      reply(data).code(201);
   }
   function onError(err){
     console.log('err', err);
